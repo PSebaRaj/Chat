@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 
 const Header = () => (
-  <div>
+  <div className='header'>
     <h2>Go + React Socket Chat</h2>
   </div>
 );

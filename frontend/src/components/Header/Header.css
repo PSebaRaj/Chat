@@ -1,7 +1,13 @@
 .header {
-    background-color: #2940D3;
-    color: #FFEDA3;
+    background-color: steelblue;
+    color: white;
     max-width: 100%;
-    padding: 50px;
-  
+    padding: 25px;
+    text-align: left;
+    border: none;
+    border-radius: 5px;
+    border: 2.5px solid rgba(0,0,0,0.1);
+    width: 50%;
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,.1);
+    width: 100%;
   }

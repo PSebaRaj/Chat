@@ -7,8 +7,10 @@ class ChatHistory extends Component {
     console.log(this.props.chatHistory);
     const messages = this.props.chatHistory.map(msg => <Message key={msg.timeStamp} message={msg.data} />);
 
+
+
     return (
-      <div>
+      <div className='ChatHistory'>
         <h2>Chat History</h2>
         {messages}
       </div>

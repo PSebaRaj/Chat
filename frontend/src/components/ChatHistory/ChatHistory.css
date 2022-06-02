@@ -1,6 +1,21 @@
 .ChatHistory {
     background-color: #2C2E43;
     margin: 0;
-    padding: 20px;
+    padding: 10px;
+    color: white;
+    padding-left: 20px;
+    padding-bottom: 50px;
 
+    border: none;
+    border-radius: 5px;
+    border: 2.5px solid rgba(0,0,0,0.1);
+    width: 50%;
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,.1);
+    width: 95%;
+
+    overflow-y: auto;
+    overflow-wrap: normal;
+    scroll-snap-stop: always;
+    height: 400px;
 }
+
