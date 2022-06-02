@@ -13,7 +13,7 @@ class Message extends Component {
   render() {
     return (
       <div>
-        <p>username:&nbsp; 
+        <p>
         {this.state.message.body}
         </p>
       </div>

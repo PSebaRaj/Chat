@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./components/Header/Header";
 import ChatHistory from "./components/ChatHistory/ChatHistory";
 import ChatInput from "./components/ChatInput/ChatInput";
+import Login from "./components/Login/Login";
 import "./App.css";
 import { connect, sendMsg } from "./api";
 
@@ -9,8 +10,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      username: "Anonymous",
       chatHistory: [],
     };
+
+    this.send = this.send.bind(this);
+    this.login = this.login.bind(this);
   }
 
   componentDidMount() {
@@ -26,7 +31,27 @@ class App extends Component {
   send(event) {
     // Enter
     if (event.keyCode === 13) {
-      sendMsg(event.target.value);
+      sendMsg(this.state.username + ": " + event.target.value);
+      event.target.value = "";
+    }
+
+    // // Right arrow
+    // if (event.keyCode === 39) {
+    //   const usr = event.target.value;
+    //   this.setState(() => ({
+    //     username: usr,
+    //   }));
+    //   event.target.value = "";
+    // }
+  }
+
+  login(event) {
+    // Right arrow
+    if (event.keyCode === 39) {
+      const usr = event.target.value;
+      this.setState(() => ({
+        username: usr,
+      }));
       event.target.value = "";
     }
   }
@@ -37,6 +62,7 @@ class App extends Component {
         <Header />
         <ChatHistory chatHistory={this.state.chatHistory} />
         <ChatInput send={this.send} />
+        <Login send={this.login} />
       </div>
     );
   }
